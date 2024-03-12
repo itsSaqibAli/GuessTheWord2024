@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "455800319776",
+    "project_id": "guess-the-word---beta",
+    "storage_bucket": "guess-the-word---beta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455800319776:android:09a0990989cd4b93aa7145",
+        "android_client_info": {
+          "package_name": "np.com.bimalkafle.quizonline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmEYBqFKrJb-CJqfSvmpPn_0NLuMRWvGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
