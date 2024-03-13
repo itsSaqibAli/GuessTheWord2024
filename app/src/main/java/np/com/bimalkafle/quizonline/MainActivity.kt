@@ -2,7 +2,6 @@ package np.com.bimalkafle.quizonline
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.FirebaseDatabase
@@ -18,8 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        var textView: TextView = findViewById(R.id.textView)
-//        var myGuess: String = textView.text.toString()
+
         quizModelList = mutableListOf()
         getDataFromFirebase()
 

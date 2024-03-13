@@ -1,11 +1,13 @@
 package np.com.bimalkafle.quizonline
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -36,11 +38,22 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
             btn2.setOnClickListener(this@QuizActivity)
             btn3.setOnClickListener(this@QuizActivity)
             nextBtn.setOnClickListener(this@QuizActivity)
+
+            // Set the editor action listener for the answerEditText
+            answerEdittext.setOnEditorActionListener { _, actionId, _ ->
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    // Simulate a click on the next button when Enter is pressed
+                    onClick(nextBtn)
+                    return@setOnEditorActionListener true
+                }
+                return@setOnEditorActionListener false
+            }
         }
 
         loadQuestions()
         startTimer()
     }
+
 
     private fun startTimer(){
         val totalTimeInMillis = time.toInt() * 60 * 1000L
@@ -60,6 +73,7 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
         }.start()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun loadQuestions(){
         selectedAnswer = ""
         if(currentQuestionIndex == questionModelList.size){
@@ -72,15 +86,19 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
             questionProgressIndicator.progress =
                 ( currentQuestionIndex.toFloat() / questionModelList.size.toFloat() * 100 ).toInt()
             questionTextview.text = questionModelList[currentQuestionIndex].question
-            btn0.text = questionModelList[currentQuestionIndex].options[0]
-            btn1.text = questionModelList[currentQuestionIndex].options[1]
-            btn2.text = questionModelList[currentQuestionIndex].options[2]
-            btn3.text = questionModelList[currentQuestionIndex].options[3]
+            // Initialize all buttons with the text "Click to Display"
+            btn0.text = "Hint : 1"
+            btn1.text = "Hint : 2"
+            btn2.text = "Hint : 3"
+            btn3.text = "Hint : 4"
         }
     }
 
     override fun onClick(view: View?) {
+        // Retrieve the text from the EditText and assign it to selectedAnswer
+        selectedAnswer = binding.answerEdittext.text.toString()
 
+        // Reset button backgrounds
         binding.apply {
             btn0.setBackgroundColor(getColor(R.color.gray))
             btn1.setBackgroundColor(getColor(R.color.gray))
@@ -88,25 +106,51 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
             btn3.setBackgroundColor(getColor(R.color.gray))
         }
 
-        val clickedBtn = view as Button
-        if(clickedBtn.id==R.id.next_btn){
-            //next button is clicked
-            if(selectedAnswer.isEmpty()){
-                Toast.makeText(applicationContext,"Please select answer to continue",Toast.LENGTH_SHORT).show()
+        // Check if next button is clicked or Enter is pressed
+        if (view?.id == R.id.next_btn || view?.id == R.id.answer_edittext) {
+            // Next button is clicked or Enter is pressed
+            if (selectedAnswer.isEmpty()) {
+                // Show toast if no answer is selected
+                Toast.makeText(applicationContext, "Please select answer to continue", Toast.LENGTH_SHORT).show()
                 return;
             }
-            if(selectedAnswer == questionModelList[currentQuestionIndex].correct){
+            // Check if selected answer is correct and update score
+            if (selectedAnswer == questionModelList[currentQuestionIndex].correct) {
                 score++
-                Log.i("Score of quiz",score.toString())
+                Log.i("Score of quiz", score.toString())
             }
+            // Move to the next question
             currentQuestionIndex++
             loadQuestions()
-        }else{
-            //options button is clicked
-            selectedAnswer = clickedBtn.text.toString()
-            clickedBtn.setBackgroundColor(getColor(R.color.orange))
+        } else {
+            // Options button is clicked
+            // Highlight the clicked button and update selectedAnswer
+            selectedAnswer = (view as Button).text.toString()
+            view.setBackgroundColor(getColor(R.color.orange))
+
+            // Display the options on the clicked button
+            val options = questionModelList[currentQuestionIndex].options
+            when (view.id) {
+                R.id.btn0 -> binding.btn0.text = options[0]
+                R.id.btn1 -> binding.btn1.text = options[1]
+                R.id.btn2 -> binding.btn2.text = options[2]
+                R.id.btn3 -> binding.btn3.text = options[3]
+            }
+
+            // Hide the other buttons' text
+//            val allButtons = listOf(binding.btn0, binding.btn1, binding.btn2, binding.btn3)
+//            val clickedButtonIndex = allButtons.indexOf(view)
+//            allButtons.forEachIndexed { index, button ->
+//                if (index != clickedButtonIndex) {
+//                    button.text = "Hint"
+//                }
+//            }
+
+            // Display the text of the clicked button in the answer EditText
+//            binding.answerEdittext.setText(selectedAnswer)
         }
     }
+
 
     private fun finishQuiz(){
         val totalQuestions = questionModelList.size
