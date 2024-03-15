@@ -3,57 +3,118 @@
     "id": "1",
     "questionList": [
       {
-        "correct": "Google",
+        "correct": "cold",
         "options": [
-          "Apple",
-          "Google",
-          "Samsung",
-          "Microsoft"
+          "❄️ Freezing temperatures make it feel chilly",
+          "🤧 It often accompanies sneezing.",
+          "⛄ Winter weather brings about its presence.",
+          "🧊 chilly sensation"
         ],
-        "question": "Who owns android?"
+        "question": "What can you catch but can’t throw?"
       },
       {
-        "correct": "Google Assistant",
+        "correct": "snow",
         "options": [
-          "Siri",
-          "Cortana",
-          "Google Assistant",
-          "Alexa"
+          "❄️ Fluffy precipitation",
+          "🌧️ Winter's blanket",
+          "🌨️ Frozen crystals",
+          "💫 Magic from the sky"
         ],
-        "question": "Which assistant android uses ?"
+        "question": "What falls but never breaks?"
+      },
+      {
+        "correct": "piano",
+        "options": [
+          "🎹 Musical melodies",
+          "🔑 Ivory and ebony",
+          "🎶 Harmony in chords",
+          "🎵 Melodic harmony"
+        ],
+        "question": "What has keys but can't open locks?"
+      },
+      {
+        "correct": "bottle",
+        "options": [
+          "🍾 Glass container",
+          "🥤 Beverage holder",
+          "🧊 Liquid reservoir",
+          "🍶 Vessel for drinks"
+        ],
+        "question": "What has a neck but no head?"
+      },
+      {
+        "correct": "keyboard",
+        "options": [
+          "⌨️ Typist's tool",
+          "🔒 Virtual input",
+          "🎼 Musical input",
+          "🖱️ Computer's companion"
+        ],
+        "question": "What has keys but can't unlock doors?"
       }
     ],
-    "subtitle": "History and Usage",
+    "subtitle": "Beginner Level - I",
     "time": "10",
-    "title": "Android"
+    "title": "Spark"
   },
   {
     "id": "2",
     "questionList": [
       {
-        "correct": "Language",
+        "correct": "ice",
         "options": [
-          "Computer",
-          "Language",
-          "Program",
-          "Software"
+          "❄️ Cold to the touch",
+          "🔥 Fire's polar opposite",
+          "💧 Water solidified",
+          "🌨️ Snow's essence"
         ],
-        "question": "Java is a ?"
+        "question": "What freezes without heat and burns without fire?"
       },
       {
-        "correct": "Modulus",
+        "correct": "fence",
         "options": [
-          "Modulus",
-          "Multiply",
-          "Subtract",
-          "Add"
+          "🏡 Property's perimeter",
+          "🚪 Barrier for yards",
+          "🛑 Borderline boundary",
+          "🌳 Wooden enclosure"
         ],
-        "question": "What % symbol means"
+        "question": "What runs around a house but doesn't move?"
+      },
+      {
+        "correct": "coin",
+        "options": [
+          "💰 Currency of choice",
+          "🪙 Metal for purchase",
+          "🎰 Luck in your pocket",
+          "🤑 Wealth in small form"
+        ],
+        "question": "What has a head, a tail, but no body?"
+      },
+      {
+        "correct": "stamp",
+        "options": [
+          "✉️ Mail's tiny token",
+          "🌍 Globe-trotting emblem",
+          "🛤️ Journey on paper",
+          "📬 Postage representation"
+        ],
+        "question": "What can travel around the world while staying in a corner?"
+      },
+      {
+        "correct": "bottle",
+        "options": [
+          "🍾 Glass container",
+          "🥤 Beverage holder",
+          "🧊 Liquid reservoir",
+          "🍶 Vessel for drinks"
+        ],
+        "question": "What has a neck but no head?"
       }
+
     ],
-    "subtitle": "Basic Programming Concepts",
+    "subtitle": "Beginner Level - II",
     "time": "15",
-    "title": "Programming"
+    "title": "Ignite"
   },
   {
     "id": "3",
@@ -99,9 +160,9 @@
         "question": "What is the purpose of the <head> tag in HTML?"
       }
     ],
-    "subtitle": "Introduction to Web Technologies",
+    "subtitle": "Novice Level - I",
     "time": "12",
-    "title": "Web Development"
+    "title": "Blaze"
   },
   {
     "id": "4",
@@ -157,9 +218,9 @@
         "question": "Which scientist is known for the theory of evolution by natural selection?"
       }
     ],
-    "subtitle": "Biology Basics",
+    "subtitle": "Novice Level - II",
     "time": "18",
-    "title": "Science"
+    "title": "Inferno"
   },
   {
     "id": "5",
@@ -215,8 +276,298 @@
         "question": "Which European city is known as the 'Eternal City'?"
       }
     ],
-    "subtitle": "World Capitals",
+    "subtitle": "Intermediate Level - I",
     "time": "10",
-    "title": "Geography"
+    "title": "Phoenix"
+  },
+  {
+    "id": "6",
+    "questionList": [
+      {
+        "correct": "Paris",
+        "options": [
+          "Berlin",
+          "Madrid",
+          "Paris",
+          "Rome"
+        ],
+        "question": "What is the capital of France?"
+      },
+      {
+        "correct": "Tokyo",
+        "options": [
+          "Seoul",
+          "Beijing",
+          "Tokyo",
+          "Bangkok"
+        ],
+        "question": "Which city is the capital of Japan?"
+      },
+      {
+        "correct": "Australia",
+        "options": [
+          "Australia",
+          "Canada",
+          "New Zealand",
+          "South Africa"
+        ],
+        "question": "Canberra is the capital of which country?"
+      },
+      {
+        "correct": "Brasília",
+        "options": [
+          "Buenos Aires",
+          "Rio de Janeiro",
+          "Brasília",
+          "São Paulo"
+        ],
+        "question": "What is the capital of Brazil?"
+      },
+      {
+        "correct": "Rome",
+        "options": [
+          "Athens",
+          "Rome",
+          "Vienna",
+          "Barcelona"
+        ],
+        "question": "Which European city is known as the 'Eternal City'?"
+      }
+    ],
+    "subtitle": "Intermediate Level - II",
+    "time": "10",
+    "title": "Lipher"
+  },
+  {
+    "id": "7",
+    "questionList": [
+      {
+        "correct": "Paris",
+        "options": [
+          "Berlin",
+          "Madrid",
+          "Paris",
+          "Rome"
+        ],
+        "question": "What is the capital of France?"
+      },
+      {
+        "correct": "Tokyo",
+        "options": [
+          "Seoul",
+          "Beijing",
+          "Tokyo",
+          "Bangkok"
+        ],
+        "question": "Which city is the capital of Japan?"
+      },
+      {
+        "correct": "Australia",
+        "options": [
+          "Australia",
+          "Canada",
+          "New Zealand",
+          "South Africa"
+        ],
+        "question": "Canberra is the capital of which country?"
+      },
+      {
+        "correct": "Brasília",
+        "options": [
+          "Buenos Aires",
+          "Rio de Janeiro",
+          "Brasília",
+          "São Paulo"
+        ],
+        "question": "What is the capital of Brazil?"
+      },
+      {
+        "correct": "Rome",
+        "options": [
+          "Athens",
+          "Rome",
+          "Vienna",
+          "Barcelona"
+        ],
+        "question": "Which European city is known as the 'Eternal City'?"
+      }
+    ],
+    "subtitle": "Advanced Level - I",
+    "time": "10",
+    "title": "Enigma"
+  },
+  {
+    "id": "8",
+    "questionList": [
+      {
+        "correct": "Paris",
+        "options": [
+          "Berlin",
+          "Madrid",
+          "Paris",
+          "Rome"
+        ],
+        "question": "What is the capital of France?"
+      },
+      {
+        "correct": "Tokyo",
+        "options": [
+          "Seoul",
+          "Beijing",
+          "Tokyo",
+          "Bangkok"
+        ],
+        "question": "Which city is the capital of Japan?"
+      },
+      {
+        "correct": "Australia",
+        "options": [
+          "Australia",
+          "Canada",
+          "New Zealand",
+          "South Africa"
+        ],
+        "question": "Canberra is the capital of which country?"
+      },
+      {
+        "correct": "Brasília",
+        "options": [
+          "Buenos Aires",
+          "Rio de Janeiro",
+          "Brasília",
+          "São Paulo"
+        ],
+        "question": "What is the capital of Brazil?"
+      },
+      {
+        "correct": "Rome",
+        "options": [
+          "Athens",
+          "Rome",
+          "Vienna",
+          "Barcelona"
+        ],
+        "question": "Which European city is known as the 'Eternal City'?"
+      }
+    ],
+    "subtitle": "Advanced Level - II",
+    "time": "10",
+    "title": "Ascent"
+  },
+  {
+    "id": "9",
+    "questionList": [
+      {
+        "correct": "Paris",
+        "options": [
+          "Berlin",
+          "Madrid",
+          "Paris",
+          "Rome"
+        ],
+        "question": "What is the capital of France?"
+      },
+      {
+        "correct": "Tokyo",
+        "options": [
+          "Seoul",
+          "Beijing",
+          "Tokyo",
+          "Bangkok"
+        ],
+        "question": "Which city is the capital of Japan?"
+      },
+      {
+        "correct": "Australia",
+        "options": [
+          "Australia",
+          "Canada",
+          "New Zealand",
+          "South Africa"
+        ],
+        "question": "Canberra is the capital of which country?"
+      },
+      {
+        "correct": "Brasília",
+        "options": [
+          "Buenos Aires",
+          "Rio de Janeiro",
+          "Brasília",
+          "São Paulo"
+        ],
+        "question": "What is the capital of Brazil?"
+      },
+      {
+        "correct": "Rome",
+        "options": [
+          "Athens",
+          "Rome",
+          "Vienna",
+          "Barcelona"
+        ],
+        "question": "Which European city is known as the 'Eternal City'?"
+      }
+    ],
+    "subtitle": "Master Level - I",
+    "time": "10",
+    "title": "Insane"
+  },
+  {
+    "id": "10",
+    "questionList": [
+      {
+        "correct": "Paris",
+        "options": [
+          "Berlin",
+          "Madrid",
+          "Paris",
+          "Rome"
+        ],
+        "question": "What is the capital of France?"
+      },
+      {
+        "correct": "Tokyo",
+        "options": [
+          "Seoul",
+          "Beijing",
+          "Tokyo",
+          "Bangkok"
+        ],
+        "question": "Which city is the capital of Japan?"
+      },
+      {
+        "correct": "Australia",
+        "options": [
+          "Australia",
+          "Canada",
+          "New Zealand",
+          "South Africa"
+        ],
+        "question": "Canberra is the capital of which country?"
+      },
+      {
+        "correct": "Brasília",
+        "options": [
+          "Buenos Aires",
+          "Rio de Janeiro",
+          "Brasília",
+          "São Paulo"
+        ],
+        "question": "What is the capital of Brazil?"
+      },
+      {
+        "correct": "Rome",
+        "options": [
+          "Athens",
+          "Rome",
+          "Vienna",
+          "Barcelona"
+        ],
+        "question": "Which European city is known as the 'Eternal City'?"
+      }
+    ],
+    "subtitle": "Master Level - II",
+    "time": "10",
+    "title": "Nirvana"
   }
 ]

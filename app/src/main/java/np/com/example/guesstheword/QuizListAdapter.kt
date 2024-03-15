@@ -1,10 +1,10 @@
-package np.com.bimalkafle.quizonline
+package np.com.example.guesstheword
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import np.com.bimalkafle.quizonline.databinding.QuizItemRecyclerRowBinding
+import np.com.example.guesstheword.databinding.QuizItemRecyclerRowBinding
 
 class QuizListAdapter(private val quizModelList : List<QuizModel>) :
     RecyclerView.Adapter<QuizListAdapter.MyViewHolder>() {

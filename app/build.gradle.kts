@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "np.com.bimalkafle.quizonline"
+    namespace = "np.com.example.guesstheword"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "np.com.bimalkafle.quizonline"
+        applicationId = "np.com.example.guesstheword"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

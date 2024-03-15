@@ -1,4 +1,4 @@
-package np.com.bimalkafle.quizonline
+package np.com.example.guesstheword
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
-import np.com.bimalkafle.quizonline.databinding.ActivityMainBinding
+import np.com.example.guesstheword.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding

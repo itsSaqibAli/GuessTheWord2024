@@ -1,4 +1,4 @@
-package np.com.bimalkafle.quizonline
+package np.com.example.guesstheword
 
 import org.junit.Test
 

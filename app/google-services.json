@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:455800319776:android:09a0990989cd4b93aa7145",
         "android_client_info": {
-          "package_name": "np.com.bimalkafle.quizonline"
+          "package_name": "np.com.example.guesstheword"
         }
       },
       "oauth_client": [],

@@ -1,4 +1,4 @@
-package np.com.bimalkafle.quizonline
+package np.com.example.guesstheword
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -11,8 +11,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import np.com.bimalkafle.quizonline.databinding.ActivityQuizBinding
-import np.com.bimalkafle.quizonline.databinding.ScoreDialogBinding
+import np.com.example.guesstheword.databinding.ActivityQuizBinding
+import np.com.example.guesstheword.databinding.ScoreDialogBinding
 import kotlin.math.min
 
 class QuizActivity : AppCompatActivity(),View.OnClickListener {

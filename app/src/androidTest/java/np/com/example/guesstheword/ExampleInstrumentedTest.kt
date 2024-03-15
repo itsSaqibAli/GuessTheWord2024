@@ -1,4 +1,4 @@
-package np.com.bimalkafle.quizonline
+package np.com.example.guesstheword
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package np.com.bimalkafle.quizonline
+package np.com.example.guesstheword
 
 data class QuizModel(
     val id : String,
