@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.content.Context
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.Toast
+import android.view.KeyEvent
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AlertDialog
 import np.com.example.guesstheword.databinding.ActivityQuizBinding
 import np.com.example.guesstheword.databinding.ScoreDialogBinding
@@ -27,6 +30,7 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
     var currentQuestionIndex = 0;
     var selectedAnswer = ""
     var score = 0;
+    var hintClicked = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,10 +44,10 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
             nextBtn.setOnClickListener(this@QuizActivity)
 
             // Set the editor action listener for the answerEditText
-            answerEdittext.setOnEditorActionListener { _, actionId, _ ->
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    // Simulate a click on the next button when Enter is pressed
-                    onClick(nextBtn)
+            answerEdittext.setOnEditorActionListener { _, actionId, event ->
+                if (actionId == EditorInfo.IME_ACTION_DONE || (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN)) {
+                    // Hide the keyboard
+                    hideKeyboard(answerEdittext)
                     return@setOnEditorActionListener true
                 }
                 return@setOnEditorActionListener false
@@ -54,6 +58,11 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
         startTimer()
     }
 
+
+    private fun hideKeyboard(view: View) {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
 
     private fun startTimer(){
         val totalTimeInMillis = time.toInt() * 60 * 1000L
@@ -86,7 +95,7 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
             questionProgressIndicator.progress =
                 ( currentQuestionIndex.toFloat() / questionModelList.size.toFloat() * 100 ).toInt()
             questionTextview.text = questionModelList[currentQuestionIndex].question
-            // Initialize all buttons with the text "Click to Display"
+            // Initialize all buttons with the text "Hint : Hint no"
             btn0.text = "Hint : 1"
             btn1.text = "Hint : 2"
             btn2.text = "Hint : 3"
@@ -95,15 +104,19 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
+
+        if (view is Button) {
+            hintClicked++
+        }
         // Retrieve the text from the EditText and assign it to selectedAnswer
         selectedAnswer = binding.answerEdittext.text.toString()
 
         // Reset button backgrounds
         binding.apply {
-            btn0.setBackgroundColor(getColor(R.color.gray))
-            btn1.setBackgroundColor(getColor(R.color.gray))
-            btn2.setBackgroundColor(getColor(R.color.gray))
-            btn3.setBackgroundColor(getColor(R.color.gray))
+            btn0.setBackgroundColor(getColor(R.color.blue))
+            btn1.setBackgroundColor(getColor(R.color.blue))
+            btn2.setBackgroundColor(getColor(R.color.blue))
+            btn3.setBackgroundColor(getColor(R.color.blue))
         }
 
         // Check if next button is clicked or Enter is pressed
@@ -126,7 +139,7 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
             // Options button is clicked
             // Highlight the clicked button and update selectedAnswer
             selectedAnswer = (view as Button).text.toString()
-            view.setBackgroundColor(getColor(R.color.orange))
+            view.setBackgroundColor(getColor(androidx.appcompat.R.color.abc_background_cache_hint_selector_material_dark))
 
             // Display the options on the clicked button
             val options = questionModelList[currentQuestionIndex].options
@@ -137,30 +150,20 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
                 R.id.btn3 -> binding.btn3.text = options[3]
             }
 
-            // Hide the other buttons' text
-//            val allButtons = listOf(binding.btn0, binding.btn1, binding.btn2, binding.btn3)
-//            val clickedButtonIndex = allButtons.indexOf(view)
-//            allButtons.forEachIndexed { index, button ->
-//                if (index != clickedButtonIndex) {
-//                    button.text = "Hint"
-//                }
-//            }
-
-            // Display the text of the clicked button in the answer EditText
-//            binding.answerEdittext.setText(selectedAnswer)
         }
     }
 
 
+    @SuppressLint("SetTextI18n")
     private fun finishQuiz(){
         val totalQuestions = questionModelList.size
-        val percentage = ((score.toFloat() / totalQuestions.toFloat() ) *100 ).toInt()
+        val finalScore = ((score.toFloat() * 5)-hintClicked.toFloat() + totalQuestions.toFloat() ).toInt()
 
         val dialogBinding  = ScoreDialogBinding.inflate(layoutInflater)
         dialogBinding.apply {
-            scoreProgressIndicator.progress = percentage
-            scoreProgressText.text = "$percentage %"
-            if(percentage>60){
+            scoreProgressIndicator.progress = finalScore
+            scoreProgressText.text = "Score : $finalScore"
+            if(finalScore >= ((totalQuestions*5)/2)){
                 scoreTitle.text = "Congrats! You have passed"
                 scoreTitle.setTextColor(Color.BLUE)
             }else{
