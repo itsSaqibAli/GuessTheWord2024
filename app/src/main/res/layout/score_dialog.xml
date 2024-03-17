@@ -15,6 +15,7 @@
         android:gravity="center"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:padding="15sp"
         android:id="@+id/score_title"/>
 
     <RelativeLayout
@@ -29,11 +30,11 @@
             tools:progress="60"
             app:trackCornerRadius="20dp"
             app:trackThickness="8dp"
-            app:indicatorSize="90dp"/>
+            app:indicatorSize="130dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="50%"
+            tools:text="Score : 30"
             android:textSize="18sp"
             android:layout_centerInParent="true"
             android:textStyle="bold"
@@ -44,7 +45,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="6 out of 10 questions are correct"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:gravity="center"
+        android:padding="15sp"
         android:id="@+id/score_subtitle"/>
     <Button
         android:layout_width="wrap_content"
