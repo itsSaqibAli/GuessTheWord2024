@@ -6,27 +6,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:src="@drawable/main_image" />
+        android:src="@drawable/detective" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="#0D1927"
         android:padding="8dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guess the Word"
+            android:text="@string/guess_the_word"
             android:gravity="center"
             android:textSize="34sp"
             android:letterSpacing="0.1"
@@ -50,7 +51,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let's Play ->"
+        android:text="Let's Solve the Mystery ->"
         android:layout_marginTop="16dp"
         android:layout_marginStart="4dp"
         android:textSize="20sp"
@@ -59,20 +60,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ProgressBar
+            android:id="@+id/progress_bar"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_centerInParent="true"
-            android:visibility="gone"
-            android:id="@+id/progress_bar"/>
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:id="@+id/recycler_view"/>
-
+            />
     </RelativeLayout>
+
 
 
 </LinearLayout>
