@@ -76,15 +76,30 @@
                 android:layout_marginVertical="8dp"
                 android:id="@+id/question_textview"/>
 
-            <EditText
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Your Guess here...."-->
+<!--                android:textColorHint="@color/white"-->
+<!--                android:textSize="18sp"-->
+<!--                android:id="@+id/answer_edittext"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:layout_marginBottom="16dp"/>-->
+<!--            answer_edittext-->
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your Guess here...."
-                android:textColorHint="@color/white"
-                android:textSize="18sp"
-                android:id="@+id/answer_edittext"
-                android:textColor="@color/white"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/answer_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:hint="Your Guess here...." />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button
@@ -96,7 +111,7 @@
                 android:textColor="@color/white"
                 android:paddingVertical="12dp"
                 android:gravity="center_vertical"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:id="@+id/btn0" />
             <Button
                 android:layout_width="match_parent"
@@ -107,7 +122,7 @@
                 android:textColor="@color/white"
                 android:paddingVertical="12dp"
                 android:gravity="center_vertical"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:id="@+id/btn1" />
             <Button
                 android:layout_width="match_parent"
@@ -118,7 +133,7 @@
                 android:textColor="@color/white"
                 android:paddingVertical="12dp"
                 android:gravity="center_vertical"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:id="@+id/btn2" />
             <Button
                 android:layout_width="match_parent"
@@ -129,7 +144,7 @@
                 android:textColor="@color/white"
                 android:paddingVertical="12dp"
                 android:gravity="center_vertical"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:id="@+id/btn3" />
 
             <Button
