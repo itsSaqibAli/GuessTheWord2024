@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Question 7/20"
+            tools:text="Mystery 7/20"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_centerVertical="true"

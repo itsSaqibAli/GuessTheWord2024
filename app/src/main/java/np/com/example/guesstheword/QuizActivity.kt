@@ -93,7 +93,7 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
         }
 
         binding.apply {
-            questionIndicatorTextview.text = "Question ${currentQuestionIndex+1}/ ${questionModelList.size} "
+            questionIndicatorTextview.text = "Mystery ${currentQuestionIndex+1}/ ${questionModelList.size} "
             questionProgressIndicator.progress =
                 ( currentQuestionIndex.toFloat() / questionModelList.size.toFloat() * 100 ).toInt()
             questionTextview.text = questionModelList[currentQuestionIndex].question
