@@ -84,6 +84,8 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
 
     @SuppressLint("SetTextI18n")
     private fun loadQuestions(){
+        binding.answerEdittext.text?.clear()
+        binding.answerEdittext.hint = "Your Guess here...."
         selectedAnswer = ""
         if(currentQuestionIndex == questionModelList.size){
             finishQuiz()
@@ -99,7 +101,8 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
             btn0.text = "Hint : 1"
             btn1.text = "Hint : 2"
             btn2.text = "Hint : 3"
-            btn3.text = "Hint : 4"
+            btn3.text = "Hint : 4" +
+                    ""
         }
     }
 
